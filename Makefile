@@ -25,7 +25,7 @@ env-down:
 ##### RUN
 run:
 	@echo "Start app ..."
-	@./education
+	@./alarm
 
 ##### CLEAN
 clean: env-down
