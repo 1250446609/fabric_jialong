@@ -49,3 +49,34 @@ Alarm   Alarm       本次历史记录的详细信息
 清空网络
 切换到目标目录 git clone 代码 重命名
 启动网络
+
+2.12
+目标是在education同级别目录创建一个alarm目录 提供报警添加接口 实现对报警数据的保存.
+fixtures还是用以前的代码 考虑到这是秘钥相关的文件 暂时复用
+创建Alarm结构体 对结构体的操作只保留添加逻辑 addAlarm 调用 PutAlarm
+start.go里面包含启动sdk 创建通道
+main.go测试链码文件的启动sdk 创建通道逻辑
+代码提交到git地址为https://github.com/1250446609/fabric_jialong.git
+因为现在的目录变成了 /home/ubuntu/go/src/github.com/kongyixueyuan.com/alarm
+所以在import相关的地方 makefile config.yaml文件里面目录中的education都变成了alarm
+把项目克隆到education同级目录 make清空网络
+执行docker-compose up -d启动网络正常
+go build报错
+
+ubuntu@VM-16-13-ubuntu:~/go/src/github.com/kongyixueyuan.com/alarm$ go build
+can't load package: package github.com/kongyixueyuan.com/alarm: no Go files in /home/ubuntu/go/src/github.com/kongyixueyuan.com/alarm
+ubuntu@VM-16-13-ubuntu:~/go/src/github.com/kongyixueyuan.com/alarm$ go build
+can't load package: package github.com/kongyixueyuan.com/alarm: no Go files in /home/ubuntu/go/src/github.com/kongyixueyuan.com/alarm
+ubuntu@VM-16-13-ubuntu:~/go/src/github.com/kongyixueyuan.com/alarm$ go mod init alarm
+go: creating new go.mod: module alarm
+ubuntu@VM-16-13-ubuntu:~/go/src/github.com/kongyixueyuan.com/alarm$ go build
+can't load package: package .: no Go files in /home/ubuntu/go/src/github.com/kongyixueyuan.com/alarm
+ubuntu@VM-16-13-ubuntu:~/go/src/github.com/kongyixueyuan.com/alarm$
+
+这个貌似不是go mod里面确实replace的原因
+
+
+
+
+
+
