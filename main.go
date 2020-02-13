@@ -8,8 +8,8 @@ import (
 	"github.com/kongyixueyuan.com/alarm/service"
 
 	"encoding/json"
-	"github.com/kongyixueyuan.com/education/web/controller"
-	"github.com/kongyixueyuan.com/education/web"
+	"github.com/kongyixueyuan.com/alarm/web/controller"
+	"github.com/kongyixueyuan.com/alarm/web"
 )
 
 const (
