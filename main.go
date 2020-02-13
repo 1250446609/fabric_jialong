@@ -4,6 +4,8 @@ import (
 	"os"
 	"fmt"
 	"github.com/kongyixueyuan.com/alarm/sdkInit"
+
+	"github.com/kongyixueyuan.com/alarm/service"
 )
 
 const (
@@ -48,5 +50,36 @@ func main()  {
 		return
 	}
 	fmt.Println(channelClient)
+
+
+	//===========================================//
+
+	serviceSetup := service.ServiceSetup{
+		ChaincodeID: "AlarmCC",
+		Client:channelClient,
+	}
+
+	alarm := service.Alarm{
+		Id: "张三",
+		SiteId: "徐州站房",
+		NoticeType: "报警通知",
+		AlarmDetail: "这里是报警详情",
+		AlarmLevel: "三级报警",
+		SiteType: "配电房",
+		TriggerValue: "100度阈值",
+		AlarmParam: "湿度",
+		AlarmTime: "报警时间",
+		Auditor: "作者",
+	}
+
+
+	msg, err := serviceSetup.SaveAlarm(alarm)
+	if err != nil {
+		fmt.Println(err.Error())
+	}else {
+		fmt.Println("信息发布成功, 交易编号为: " + msg)
+	}
+
+	//===========================================//
 
 }

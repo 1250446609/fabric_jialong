@@ -87,5 +87,11 @@ ubuntu@VM-16-13-ubuntu:~/go/src/github.com/kongyixueyuan.com/alarm$
     `链码实例化成功`
     `通道客户端创建成功 可以利用此客户端调用链码进行查询或执行事务`
 
+创建service层
+    service/domain.go 业务层
+    service/alarmService 提供SaveAlarm保存
+
+main.go文件 调用service中的提供的SaveAlarm保存
+
 
 
