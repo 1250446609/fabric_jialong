@@ -1,6 +1,9 @@
+# 说明
 这是工程的readme.txt文件.
 主要过程记录
 根据jl_alarm_log建立模型
+
+```sql
 CREATE TABLE `jl_alarm_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_id` int(11) DEFAULT NULL COMMENT '站房id',
@@ -15,6 +18,7 @@ CREATE TABLE `jl_alarm_log` (
   `auditor` int(11) DEFAULT NULL COMMENT '审批人 关联sys_user',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='报警记录表';
+```
 
 由于需要向分类账本中保存数据，所以必须设计相关的结构体用于声明要保存的数据结构，用于方便的在应用中处理数据。
 Alarm结构体设计如下：
@@ -95,3 +99,4 @@ main.go文件 调用service中的提供的SaveAlarm保存
 
 
 创建web/webServer.go文件 启动服务器监听9000端口 路由到controller里面的AddAlarm方法
+
