@@ -94,4 +94,4 @@ ubuntu@VM-16-13-ubuntu:~/go/src/github.com/kongyixueyuan.com/alarm$
 main.go文件 调用service中的提供的SaveAlarm保存
 
 
-
+创建web/webServer.go文件 启动服务器监听9000端口 路由到controller里面的AddAlarm方法

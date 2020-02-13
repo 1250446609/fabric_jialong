@@ -6,6 +6,10 @@ import (
 	"github.com/kongyixueyuan.com/alarm/sdkInit"
 
 	"github.com/kongyixueyuan.com/alarm/service"
+
+	"encoding/json"
+	"github.com/kongyixueyuan.com/education/web/controller"
+	"github.com/kongyixueyuan.com/education/web"
 )
 
 const (
@@ -82,4 +86,8 @@ func main()  {
 
 	//===========================================//
 
+	app := controller.Application{
+		Setup: &serviceSetup,
+	}
+	web.WebStart(app)
 }
