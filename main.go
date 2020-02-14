@@ -64,7 +64,7 @@ func main()  {
 	}
 
 	alarm := service.Alarm{
-		Id: "张三",
+		Id: "110",
 		SiteId: "徐州站房",
 		NoticeType: "报警通知",
 		AlarmDetail: "这里是报警详情",

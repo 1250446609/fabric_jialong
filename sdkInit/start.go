@@ -1,5 +1,5 @@
 /**
-  author: hanxiaodong
+  author: hm
 */
 package sdkInit
 
@@ -81,7 +81,7 @@ func CreateChannel(sdk *fabsdk.FabricSDK, info *InitInfo) error {
 	return nil
 }
 
-// hanxiaodong
+// hm
 // QQ群（专业Fabric交流群）：862733552
 func InstallAndInstantiateCC(sdk *fabsdk.FabricSDK, info *InitInfo) (*channel.Client, error) {
 	fmt.Println("开始安装链码......")
